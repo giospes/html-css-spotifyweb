@@ -2,7 +2,7 @@
 
 :root{
    --main-bg: #141922;
-   --header-bg: rgb(8, 11, 18);
+   --header-bg: rgba(14, 18, 26, .9);
    --aside-bg: rgb(0, 0, 0);
    --secondary-txt-color: rgb(113, 113, 113);
    --txr-color: white;
@@ -20,6 +20,7 @@
 body{
     color: white;
     font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
 }
 
 ul{
@@ -61,12 +62,12 @@ header{
     right: 0;
     z-index: 10;
     background-color: var(--header-bg);
-    opacity: 50%;
     height: 80px;
     width: calc(100% - 200px);
 }
 
 main{
+    padding: 1rem;
     overflow-y: auto;
     background-color: var(--main-bg);
     height: calc(100% - 80px);
@@ -80,6 +81,10 @@ footer{
     background-color: var(--footer-bg-color);
     height: 80px;
     width: 100%;
+}
+
+.card{
+    width: calc((100% / 6) - 1rem);
 }
 
 /* aside styling */
@@ -179,7 +184,85 @@ aside section li{
 }
 #txt-account{
     color: white;
-    font-size: .9rem;
+    font-size: .8rem;
     padding-left: .4rem;
     font-weight: 700;
 }
+
+
+/* header */
+header{
+    justify-content: flex-end;
+    align-items: center;
+    padding: .5rem;
+}
+
+header a{
+    padding: .3rem 1rem;
+    border: 2px solid rgb(255, 252, 252);
+    border-radius: 20px;
+    color: white;
+}
+
+header a span{
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/* main */
+
+/* nav */
+
+main nav{
+    max-width: 750px;
+    margin: .5rem auto;
+}
+
+main nav ul{
+    justify-content: space-between;
+}
+
+main nav ul li{
+    padding: .5rem;
+    position: relative;
+}
+
+main nav ul li a{
+    color: var(--secondary-txt-color);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+main nav ul li:hover a{
+    color: var(--txr-color);
+}
+
+main nav ul li:hover a::after{
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+
+.active a{
+    color: var(--txr-color);
+}
+.active::after{
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* section recently played */
