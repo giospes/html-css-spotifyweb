@@ -2,7 +2,7 @@
 
 :root{
    --main-bg: #141922;
-   --header-bg: rgba(14, 18, 26, .9);
+   --header-bg: rgba(10, 10, 20, .9);
    --aside-bg: rgb(0, 0, 0);
    --secondary-txt-color: rgb(113, 113, 113);
    --txr-color: white;
@@ -44,6 +44,16 @@ a{
     justify-content: space-between;
 }
 
+.txt-small{
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.txt-title{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
 /* layout */
 .wrapper{
     width: 100%;
@@ -51,13 +61,13 @@ a{
 }
 
 aside{
-    width: 200px;
+    width: 220px;
     background-color: var(--aside-bg);
     height: calc(100% - 80px);
 }
 
 .right{
-    width: calc(100% - 200px)
+    width: calc(100% - 220px)
 }
 
 header{
@@ -67,7 +77,7 @@ header{
     z-index: 10;
     background-color: var(--header-bg);
     height: 80px;
-    width: calc(100% - 200px);
+    width: calc(100% - 220px);
 }
 
 main{
@@ -267,14 +277,24 @@ main nav ul li:hover a::after{
 
 /* section recently played */
 
-#recently-played{
+main section{
     margin-top: 2.5rem ;
+}
+
+main section ul{
+    gap: 1rem;
 }
 
 h2{
     font-weight: 700;
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+}
+.card{
+    margin-top: 1.5rem;
+}
+
+#recently-played .card{
+    margin-top: 2rem;
 }
 
 .card img{
@@ -284,14 +304,57 @@ h2{
 .card h4{
     text-align: center;
     margin-top: .5rem;
-    font-weight: 700;
-    font-size: 1.1rem;
 }
 
 .card span{
     display: block;
     text-align: center;
     margin-top: .3rem;
+    color: var(--secondary-txt-color);
+
+}
+
+section p{
+    margin-top: .5rem;
     font-size: .8rem;
     font-weight: 500;
+    color: var(--secondary-txt-color);
 }
+
+.round-img{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+/* footer */
+footer{
+    padding: 1rem .8rem;
+}
+
+#playing{
+    align-items: center;
+    width: calc(210px - .8rem);
+}
+
+#playing h4{
+    font-size: .7rem;
+}
+
+#playing span{
+    font-size: .7rem;
+    color: var(--secondary-txt-color);
+}
+
+#playing img{
+    width:30px;
+}
+
+#playing i{
+   color: var(--secondary-txt-color);
+}
+
+#playing i:hover{
+    color: var(--txr-color);
+}
+
