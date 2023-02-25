@@ -139,8 +139,8 @@
                 </section>
             </main>
         </div>
-        <footer class="flex">
-            <div id="playing" class="flex space-between">
+        <footer class="flex space-between">
+            <div id="playing" class="side flex space-between">
                 <img src="https://cdn.shopify.com/s/files/1/0414/0557/9425/products/LP-03_1024x1024.jpg?v=1671701418" width="50px" alt="">
                 <div class="foot-text">
                     <h4 class="txt-small">Cookies N' Cream</h4>
@@ -149,8 +149,25 @@
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-folder"></i>
             </div>
-            <div id="play-bar">
-
+            <div id="play-bar" class="flex space-between">
+                <ul id="bar-icons" class="flex space-between">
+                    <li><i class="fa-solid fa-shuffle"></i></li>
+                    <li><i class="fa-solid fa-backward-step"></i></li>
+                    <li><i id="play-btn" class="fa-solid fa-circle-play"></i></li>
+                    <li><i class="fa-solid fa-forward-step"></i></li>
+                    <li><i class="fa-solid fa-arrow-rotate-right"></i></li>
+                </ul>
+                <div id="bar">
+                    <span>0:25</span>
+                    <input type="range">
+                    <span>4:25</span>
+                </div>
+            </div>
+            <div id="volume-icons" class="side flex space-between">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-desktop"></i>
+                <i class="fa-solid fa-volume-low"></i>
+                <input id="volume-bar" type="range">
             </div>
         </footer>
         
