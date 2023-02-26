@@ -90,11 +90,12 @@ main{
 }
 
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: var(--footer-bg-color);
     height: 80px;
     width: 100%;
+    z-index: 1000;
 }
 
 .card{
@@ -126,6 +127,14 @@ aside nav li{
     margin-bottom: .5rem;
     vertical-align: middle;
     min-width: 100px;
+}
+
+aside li:hover{
+    color: var(--txr-color);
+}
+
+aside nav li:hover{
+   border-left: 2px solid white;
 }
 
 aside nav li i{
@@ -242,6 +251,10 @@ main nav{
     margin: 0 auto;
 }
 
+main nav ul{
+    align-items: center;
+}
+
 main nav ul li{
     padding: .5rem;
     position: relative;
@@ -310,10 +323,31 @@ h2{
     margin-top: 2rem;
 }
 
+.cover-container{
+    position: relative;
+}
+
 .card img{
     width: 100%;
 }
 
+i.play-btn-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #1DB954;
+    display: none;
+}
+
+#recently-played .card .cover-container:hover img{
+    filter: blur(4px);
+}
+
+#recently-played .card .cover-container:hover i{
+    display: block;
+}
 .card h4{
     text-align: center;
     margin-top: .5rem;
@@ -466,16 +500,29 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
         color: var(--secondary-txt-color);
         padding: .2rem;
     }
-
-    #bar-icons {
-
-    }
     #bar-icons li i{
         display: block;
         text-align: center;
         font-size: 1.2rem;
         line-height: 2rem;
     }
+
+    .active::after{
+        bottom: 0;
+        left: 5%;
+        transform: translateX(0);
+    }
+
+    main nav ul li{
+        font-size: .8rem;
+    }
+
+    main nav ul li:hover a::after{
+        bottom: 0;
+        left: 5%;
+        transform: translateX(0);      
+    }
+    
 }
 
 @media screen and (max-width: 650px){
@@ -620,11 +667,7 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
     } 
 
     .active::after{
-        content: "";
         width: 150px;
-        height: 3px;
-        background-color: greenyellow;
-        position: absolute;
         bottom: 0;
         left: 0;
         transform: translateX(5%);
