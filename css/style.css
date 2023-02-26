@@ -58,6 +58,7 @@ a{
 .wrapper{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 aside{
@@ -78,6 +79,7 @@ header{
     background-color: var(--header-bg);
     height: 80px;
     width: calc(100% - 220px);
+    overflow: hidden;
 }
 
 main{
@@ -329,6 +331,8 @@ h2{
 
 .card img{
     width: 100%;
+    filter: blur(0);
+    transition: filter 1s 
 }
 
 i.play-btn-card{
@@ -338,7 +342,8 @@ i.play-btn-card{
     transform: translate(-50%, -50%);
     font-size: 3rem;
     color: #1DB954;
-    display: none;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 #recently-played .card .cover-container:hover img{
@@ -346,7 +351,7 @@ i.play-btn-card{
 }
 
 #recently-played .card .cover-container:hover i{
-    display: block;
+    opacity: 1;
 }
 .card h4{
     text-align: center;
@@ -473,6 +478,28 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
     -webkit-appearance: none; 
     appearance: none;
 }  
+
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--footer-bg-color) ;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #1b6435;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1DB954;
+}
+
+
+
 
 @media screen and (max-width: 1100px){
     main section ul{
@@ -627,7 +654,7 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
     }
 
     .foot-text h4{
-        font-size: .6;
+        font-size: .6rem;
     }
 
     .side{
@@ -671,5 +698,21 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
         bottom: 0;
         left: 0;
         transform: translateX(5%);
+    }
+}
+
+
+@media screen and (max-height: 450px){
+    header > *{
+        display: none;
+    }
+
+    header{
+        height: 0;
+        padding: 0;
+    }
+
+    main{
+       padding-top: 1rem;
     }
 }
