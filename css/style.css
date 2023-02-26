@@ -116,12 +116,16 @@ aside img{
     padding-top: .8rem;
     padding-bottom: 1rem;
 }
+#logo-small{
+  display: none;  
+}
 aside nav{
     height: 76px;
 }
 aside nav li{
     margin-bottom: .5rem;
     vertical-align: middle;
+    min-width: 100px;
 }
 
 aside nav li i{
@@ -129,6 +133,7 @@ aside nav li i{
     
 }
 aside nav li span{
+
     font-size: .7rem;
     font-weight: 500;
     height: 20px;
@@ -165,6 +170,9 @@ aside section li{
     font-size: .8rem;
 }
 
+#playlist{
+    overflow: auto;
+}
 
 #img-download{
     width: 20px;
@@ -238,11 +246,15 @@ main nav ul li{
     padding: .5rem;
     position: relative;
 }
+main nav ul li:nth-child(1){
+    display: none
+} 
 
 main nav ul li a{
     color: var(--secondary-txt-color);
     text-transform: uppercase;
     font-weight: 700;
+    text-align: center;
 }
 
 main nav ul li:hover a{
@@ -290,6 +302,7 @@ h2{
     font-size: 1.5rem;
 }
 .card{
+    min-width: 125px;
     margin-top: 1.5rem;
 }
 
@@ -352,6 +365,7 @@ footer{
 
 #playing i{
    color: var(--secondary-txt-color);
+   padding: .5rem;
 }
 
 #playing i:hover{
@@ -359,10 +373,15 @@ footer{
 }
 
 #play-bar{
+    padding: 0 .5rem;
     width: 50%;
     flex-direction: column;  
     align-items: center;
     justify-content: center;
+}
+
+#bar-icons{
+    width: 50%;
 }
 
 #bar{
@@ -390,11 +409,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb {
     margin-top: -5px; 
-
 }  
 
 #bar-icons li{
-    margin: .5rem;
     height: 2rem;
     width: 2rem;
 }
@@ -422,3 +439,194 @@ input[type="range"]#volume-bar::-webkit-slider-thumb {
     -webkit-appearance: none; 
     appearance: none;
 }  
+
+@media screen and (max-width: 1100px){
+    main section ul{
+        flex-wrap: wrap;
+        gap: 0rem  1rem;
+    }
+}
+
+@media screen and (max-width: 790px){
+    main nav ul {
+        flex-wrap: wrap;
+    }
+    main nav ul li{
+        width: calc(100% / 3);
+    }
+    .card{
+       width: calc((100% / 3) - 1rem);
+    }
+
+    .small-icons{
+        flex-direction: column;
+    }
+
+    #playing i{
+        color: var(--secondary-txt-color);
+        padding: .2rem;
+    }
+
+    #bar-icons {
+
+    }
+    #bar-icons li i{
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .card{
+       width: calc((100% / 2) - 1rem);
+    }
+    #bar-icons li i{
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    
+    #bar-icons li:hover i{
+        font-size: 1.5rem;
+    }
+
+    #bar span{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 568px){
+    aside{
+        width: 40px;
+        padding: .5rem;
+        text-align: center;
+    }
+    
+    .right{
+        width: calc(100% - 40px)
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background-color: var(--header-bg);
+        height: 80px;
+        width: calc(100% - 40px);
+    } 
+
+    aside section#play-account{
+        display: none;
+    }
+
+    #logo-img{
+        display: none;
+    }
+
+    #logo-small{
+        display: block;
+        width: 100%;
+    }
+
+    aside nav ul li span{
+        display: none;
+    }
+    .aside-padding{
+        padding: 0;
+    }
+    #bar-icons{
+        gap: .5rem;
+        width: 70%;
+    }
+
+    .foot-text{
+        padding-left: .2rem;
+    }
+    .foot-text span{
+        display: none;
+        
+    }
+}
+
+@media screen and (max-width: 450px){
+    
+    main h2{
+        text-align: center;
+    }
+
+    .card{
+        width: 100% ;
+        padding: .2rem;
+    }
+    
+    #volume-icons i:nth-child(1) ,  i:nth-child(2) , #volume-bar {
+        display: none;
+    }
+
+    #volume-icons{
+       justify-content: center;
+    }
+
+    #volume-icons i{
+        font-size: 2rem;
+    }
+
+    .small-icons i{
+        display: none;
+    }
+
+    .foot-text h4{
+        font-size: .6;
+    }
+
+    .side{
+        width: 25%;
+    }
+
+    #bar-icons li:first-child, #bar-icons li:last-child{
+        display: none;
+    }
+
+    #bar-icons{
+        gap: .1rem;
+        width: 70%;
+    }
+
+    main nav{
+        position: relative;
+    }
+
+    main nav ul li{
+        display: none;
+    }
+
+    main nav ul li:nth-child(2){
+        display: inline-block;
+        width: 90%;
+        padding-top: 1rem;
+        font-size: 1.3rem;
+    }
+
+    main nav ul li:nth-child(1){
+        display: inline-block;
+        width: 10%;
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.3rem;
+    } 
+
+    .active::after{
+        content: "";
+        width: 150px;
+        height: 3px;
+        background-color: greenyellow;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(5%);
+    }
+}

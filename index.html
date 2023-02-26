@@ -11,7 +11,8 @@
 <body>
     <div class="wrapper flex">
         <aside>
-            <img src="./img/logo.svg" alt="" class="aside-padding">
+            <img id="logo-img" src="./img/logo.svg" alt="" class="aside-padding">
+            <img id="logo-small" src="./img/logo-small.svg" alt="">
             <nav>
                 <ul>
                     <li class="flex aside-padding">
@@ -62,6 +63,7 @@
             <main>
                 <nav>
                     <ul class="flex space-between">
+                        <li><i class="fa-solid fa-bars"></i></li>
                         <li class="active"><a href="#">in evidenza</a></li>
                         <li><a href="#">podcast</a></li>
                         <li><a href="#">classifiche</a></li>
@@ -146,8 +148,10 @@
                     <h4 class="txt-small">Cookies N' Cream</h4>
                     <span class="txt-small">Gue Pequeno</span>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-regular fa-folder"></i>
+                <div class="flex small-icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-folder"></i>
+                </div>
             </div>
             <div id="play-bar" class="flex space-between">
                 <ul id="bar-icons" class="flex space-between">
